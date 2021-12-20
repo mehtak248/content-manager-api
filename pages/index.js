@@ -23,26 +23,26 @@ const index = ({resources}) => {
   )
 }
 
-// export async function getServerSideProps() {
-//   const res = await fetch(`${process.env.API_URL}/resources`)
-//   const data = await res.json()
-//   return {
-//     props: {
-//       resources: data
-//     }, // will be passed to the page component as props
-//   }
-// }
-
-// There will be local folder path for this function
-export async function getStaticProps() {
-  const res = await fetch(`http://localhost:3000/api/resources`);
-  const data = await res.json();
-
+export async function getServerSideProps() {
+  const res = await fetch(`${process.env.API_URL}/resources`)
+  const data = await res.json()
   return {
     props: {
       resources: data
     }, // will be passed to the page component as props
   }
 }
+
+// There will be local folder path for this function
+// export async function getStaticProps() {
+//   const res = await fetch(`http://localhost:3000/api/resources`);
+//   const data = await res.json();
+
+//   return {
+//     props: {
+//       resources: data
+//     }, // will be passed to the page component as props
+//   }
+// }
 
 export default index;
